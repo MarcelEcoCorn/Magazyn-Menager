@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: #0f1117;
+  --bg-secondary: #161b27;
+  --bg-card: #1c2333;
+  --bg-hover: #232b3e;
+  --border: #2d3748;
+  --border-light: #3d4a63;
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --accent: #38bdf8;
+  --accent-dim: #0284c7;
+  --success: #34d399;
+  --warning: #fbbf24;
+  --danger: #f87171;
+  --font-sans: 'IBM Plex Sans', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb { background: var(--border-light); border-radius: 3px; }
+
+/* Print styles */
+@media print {
+  .no-print { display: none !important; }
+  .print-only { display: block !important; }
+  body { background: white; color: black; font-size: 11px; }
+  .print-table { width: 100%; border-collapse: collapse; }
+  .print-table th, .print-table td {
+    border: 1px solid #999;
+    padding: 4px 6px;
+    font-size: 10px;
+  }
+  .print-table th { background: #eee; font-weight: 600; }
+}
+
+/* Warehouse grid cell */
+.warehouse-cell {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  transition: all 0.15s ease;
+}
+.warehouse-cell:hover { border-color: var(--accent); }
+.warehouse-cell:focus-within { border-color: var(--accent); box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.15); }
+
+/* Editable input */
+.cell-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  width: 100%;
+  padding: 0;
+}
+.cell-input::placeholder { color: var(--text-muted); }
+.cell-input:focus { color: white; }
+
+.weight-input {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--accent);
+  text-align: right;
+}
+
+/* Level badge */
+.badge-gora { 
+  background: rgba(56, 189, 248, 0.12); 
+  color: #7dd3fc; 
+  border: 1px solid rgba(56, 189, 248, 0.25);
+}
+.badge-dol { 
+  background: rgba(52, 211, 153, 0.12); 
+  color: #6ee7b7; 
+  border: 1px solid rgba(52, 211, 153, 0.25);
+}
