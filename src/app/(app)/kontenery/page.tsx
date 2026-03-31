@@ -109,8 +109,8 @@ export default function KontenerPage() {
           <div className="grid gap-4" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(520px, 1fr))' }}>
             {containers.map(c => {
               const isSaving = saving.has(c.container_num);
-              const totalWeight = [c.weight_1, c.weight_2, c.weight_3, c.weight_4]
-                .reduce((sum, w) => sum + (w || 0), 0);
+const totalWeight = [c.weight_1, c.weight_2, c.weight_3, c.weight_4]
+  .reduce((sum: number, w) => sum + (w || 0), 0);
 
               return (
                 <div key={c.container_num} className="rounded-xl overflow-hidden"
